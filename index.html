@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Login And Register</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/practicaldev/image/fetch/s--8p7s7734--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.faviator.xyz/assets/logo.png">
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800;900&display=swap" rel="stylesheet">
+
+    <!-- css libraries links  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- custom style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 offset-3">
+          <div class="register-box pt-5">
+            <h2 class="text-center py-4">Register New User</h2>
+
+            <input id="fullName" type="text" class="w-100 mb-3 p-2" placeholder="Your Full Name" onkeyup="validateName()">
+            <input id="email" type="email" class="w-100 mb-3 p-2" placeholder="Your Email" onkeyup="validateEmail()">
+            <input id="password" type="password" class="w-100 mb-3 p-2" placeholder="Password" onkeyup="validatePass()">
+            
+            <div id="messages" class="mb-3">
+              <div class="alert alert-danger mb-3 fullname d-none"><i class="fa fa-close fa-fw me-2"></i>Full Name Cannot Be Empty !</div>
+              <div class="alert alert-danger mb-3 email d-none"><i class="fa fa-close fa-fw me-2"></i>Email Cannot Be Empty !</div>
+              <div class="alert alert-danger mb-3 password d-none"><i class="fa fa-close fa-fw me-2"></i>Password Cannot Be Empty !</div>
+              <div class="alert alert-success mb-3 d-none"><i class="fa fa-check fa-fw me-2"></i>Your User Info Has Been Saved Successfuly !</div>
+
+              <div class="alert alert-danger mb-3 emailExist d-none"><i class="fa fa-close fa-fw me-2"></i>Email Already Exist !</div>
+              <div class="alert alert-danger mb-3 emailNotValid d-none"><i class="fa fa-close fa-fw me-2"></i>Email Not Valid !</div>
+            </div>
+
+            <button id="registerBtn" class="btn btn-primary m-auto d-block mb-4" onclick="register()"><i class="fa fa-check fa-fw me-2"></i>Register</button>
+            <p class="text-center text-capitalize h5">if You already have An Account <a class="login-link" href="login.html">Log in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+    <!-- scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- end scripts -->
+  </body>
+</html>

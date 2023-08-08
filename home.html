@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Login And Register</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/practicaldev/image/fetch/s--8p7s7734--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.faviator.xyz/assets/logo.png">
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800;900&display=swap" rel="stylesheet">
+
+    <!-- css libraries links  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- custom style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 offset-3">
+          <div class="register-box pt-5">
+            <h2 class="text-center py-4 welcomeDiv"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <script>
+      let username = localStorage.getItem('userName');
+      console.log(username);
+      document.querySelector('.welcomeDiv').innerHTML = 'Welcome Mr ' + username;
+    </script>
+
+    <!-- scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- end scripts -->
+  </body>
+</html>

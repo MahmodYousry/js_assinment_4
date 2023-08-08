@@ -1,0 +1,28 @@
+
+/* navbar */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #eee;
+  color: #343434;
+  font-weight: 400;
+}
+
+.register-box {
+  background-color: #ccc;
+  padding: 2rem 3rem;
+  margin-top: 100px;
+  border-radius: 25px;
+}
+
+.login-link {
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+input:focus {
+  outline: none;
+}
