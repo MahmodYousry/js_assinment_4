@@ -8,10 +8,13 @@ let registerBtn = document.querySelector('#registerBtn');
 
 let welcomeDiv = document.querySelector('.welcomeDiv');
 
+// alerts
 let fullnameAlrt = document.querySelector('.fullname');
 let emailAlrt = document.querySelector('.email');
 let passAlrt = document.querySelector('.password');
 let alertSuccess = document.querySelector('.alert-success');
+let emailNotValid = document.querySelector('.emailNotValid');
+let emailExist = document.querySelector('.emailExist');
 
 let localData = localStorage.getItem('database');
 
@@ -31,7 +34,7 @@ if (localData) {
 // create
 function register() {
 
-  if (validateName() && validateEmail() && validatePass()) {
+  if (validateName() && validateEmail() && validatePass() && isValidEmail(email.value) && validateEmailExist()) {
 
     // Make a new object with data coming from users
     let userInputs = {
@@ -108,10 +111,38 @@ function validatePass() {
   }
 }
 
-function login() {
-  function findUserByEmail(emailToFind) {
-    return userInform.find(element => element.email === emailToFind);
+function validateEmailExist() {
+  let foundUser = findUserByEmail(email.value);
+  if (foundUser) {
+    email.style.border = '3px solid red';
+    emailExist.classList.contains('d-none') ?  emailExist.classList.remove('d-none') : '';
+    return false;
+  } else {
+    email.style.border = '';
+    return true;
   }
+}
+
+// check if the email exist
+function findUserByEmail(emailToFind) {
+  return userInform.find(element => element.email === emailToFind);
+}
+
+function isValidEmail(anyEmail) {
+  // Regular expression for basic email validation
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  if (emailRegex.test(anyEmail)) {
+    return true;
+  } else {
+    email.style.border = '3px solid red';
+    emailNotValid.classList.contains('d-none') ?  emailNotValid.classList.remove('d-none') : '';
+    return false;
+  }
+}
+
+// login
+function login() {
 
   // Example usage
   let emailToSearch = email.value;
@@ -131,8 +162,14 @@ function login() {
       alert('access Denied');
     }
   } else {
-    console.log('User not found.');
+    alert('User not found.');
   }
+}
+
+// log out
+function logout() {
+  localStorage.removeItem('userName');
+  location.reload();
 }
 
 

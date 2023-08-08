@@ -26,6 +26,7 @@
         <div class="col-xl-6 offset-3">
           <div class="register-box pt-5">
             <h2 class="text-center py-4 welcomeDiv"></h2>
+            <button onclick="logout()" class="btn btn-secondary">Log Out</button>
           </div>
         </div>
       </div>
@@ -33,6 +34,7 @@
    
     <script>
       let username = localStorage.getItem('userName');
+      username == null ? window.location.href = 'login.html' : '';
       console.log(username);
       document.querySelector('.welcomeDiv').innerHTML = 'Welcome Mr ' + username;
     </script>
